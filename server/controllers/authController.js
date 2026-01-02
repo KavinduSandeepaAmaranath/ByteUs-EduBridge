@@ -42,21 +42,21 @@ exports.loginStudent = async (req, res) => {
     try {
         const { studentId, password } = req.body;
 
-        const student = await student.findOne({ email });
-        if(!student) {
+        const foundStudent = await student.findOne({ studentId });
+        if(!foundStudent) {
             return res.status(401).json({ message: "Invalid credentials" });
         }
 
-        const isMatch = await bcrypt.compare(password, student.password);
+        const isMatch = await bcrypt.compare(password, foundStudent.password);
         if(!isMatch) {
             return res.status(401).json({ message: "Invalid credentials" });
         }
 
         res.json ({
-            id: student._id,
-            name: student.name,
-            studentId: student.studentId,
-            email: student.email,
+            id: foundStudent._id,
+            name: foundStudent.name,
+            studentId: foundStudent.studentId,
+            email: foundStudent.email,
             token: generateToken(student._id),
         });
     } catch (error) {
@@ -66,7 +66,7 @@ exports.loginStudent = async (req, res) => {
 
 exports.registerTeacher = async (req, res) => {
     try {
-        const { name, teacherId, email, password } = req.body;
+        const { name, teacherId, email, password, confirmPassword } = req.body;
 
         if(password !== confirmPassword) {
             return res.status(400).json({message:"passwords does not match"});
@@ -103,22 +103,22 @@ exports.loginTeacher = async (req, res) => {
     try {
         const { teacherId, password } = req.body;
 
-        const teacher = await teacher.findOne({ email });
-        if(!teacher) {
+        const foundTeacher = await teacher.findOne({ teacherId });
+        if(!foundTeacher) {
             return res.status(401).json({ message: "Invalid credentials" });
         }
 
-        const isMatch = await bcrypt.compare(password, teacher.password);
+        const isMatch = await bcrypt.compare(password, foundTeacher.password);
         if(!isMatch) {
             return res.status(401).json({ message: "Invalid credentials" });
         }
 
         res.json ({
-            id: teacher._id,
-            name: teacher.name,
-            studentId: teacher.teacherId,
-            email: teacher.email,
-            token: generateToken(teacher._id),
+            id: foundTeacher._id,
+            name: foundTeacher.name,
+            teacherId: foundTeacher.teacherId,
+            email: foundTeacher.email,
+            token: generateToken(foundTeacher._id),
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
