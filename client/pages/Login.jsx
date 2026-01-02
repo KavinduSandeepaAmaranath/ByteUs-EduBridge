@@ -6,6 +6,15 @@ const Login = () => {
     const[isTeacher, setIsTeacher] = useState(false)
     const toggleTeacher = () => setIsTeacher(!isTeacher)
 
+    const[studentId, setStudentId] = useState('')
+    const[teacherId, setTeacherId] = useState('')
+    const[password, setPassword] = useState('')
+
+    const handleSubmit = async (e) => {
+        
+    }
+
+
   return (
     <div className='min-h-screen bg-lime-50 backdrop-blur-3xl flex items-center justify-center'>
         <div className='min-w-md bg-lime-300/50 p-10 rounded-xl'>
@@ -25,19 +34,19 @@ const Login = () => {
             <form action="">
                 {!isTeacher && (
                     <div>
-                        <label htmlFor="" className='block text-xl font-bold'>Student ID</label>
-                        <input type="text" className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
+                        <label htmlFor="studentId" className='block text-xl font-bold'>Student ID</label>
+                        <input type="text" id='studentId' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
                     </div>
                 )}
                 {isTeacher && (
                     <div>
-                        <label htmlFor="" className='block text-xl font-bold'>Teacher ID</label>
-                        <input type="text" className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
+                        <label htmlFor="teacherId" className='block text-xl font-bold'>Teacher ID</label>
+                        <input type="text" id='teacherId' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
                     </div>
                 )}
                 <div>
-                    <label htmlFor="" className='block text-xl font-bold mt-5'>Password</label>
-                    <input type="password" className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
+                    <label htmlFor="passsword" className='block text-xl font-bold mt-5'>Password</label>
+                    <input type="password" id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
                 </div>
                 <div>
                     <button type='submit' className='bg-amber-300 w-full py-2 mt-10 rounded-3xl text-lg font-bold'>Submit</button>
