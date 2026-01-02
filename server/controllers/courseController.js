@@ -1,29 +1,28 @@
 const course = require("../models/course");
 
-
-//techer part
+//teacher part
 
 //creating course
 
 const createCourse=async(req,res)=>{
     try{
-        const{title,discription}=req.body;
+        const{ title, description } = req.body;
 
-        const courses=await course.create({
+        const newCourse = await course.create({
             title,
-            discription,
+            description,
             teacher:req.user.id
         });
-        res.status(201).json(course);
+        res.status(201).json(newCourse);
     }catch(error){
-        res.status(500).json({message:"course creation failed"});
+        res.status(500).json({message:"Course creation failed"});
     }
 };
 
 //get course teacher create
-const getTeacherCourses=async(req,res)=>{
+const getTeacherCourses = async(req,res)=>{
     try{
-        const course= await course.find({teacher:req.user.id});
+        const courses = await course.find({teacher: req.user.id});
         res.json(courses);
     }catch (error){
         res.status(500).json({message:"failed to fetch courses"});
@@ -33,7 +32,7 @@ const getTeacherCourses=async(req,res)=>{
 
 //get all courses
 
-const getAllCourses =async(req,res)=>{
+const getAllCourses = async(req,res)=>{
     try{
         const courses=await course.find().populate("teacher","name");
         res.json(courses);
@@ -43,7 +42,7 @@ const getAllCourses =async(req,res)=>{
 };
 
 //enroll student
-const enrollCourse=async(req,res)=>{
+const enrollCourse = async(req,res)=>{
         try{
             const course=await course.findById(req.params.courseId);
 
@@ -55,9 +54,9 @@ const enrollCourse=async(req,res)=>{
             course.enrolledStudents.push(req.user.id);
             await course.save();
 
-            res.json({message:"enrolled successfully"});
+            res.json({message: "Enrolled successfully"});
         }catch(error){
-            res.status(500).json({message:"enrollment failed"});
+            res.status(500).json({message:"Enrollment failed"});
         }
 };
 
@@ -67,5 +66,3 @@ module.exports={
     getAllCourses,
     enrollCourse
 };
-
-
