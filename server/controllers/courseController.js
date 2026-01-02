@@ -1,5 +1,5 @@
 const course = require("../models/course");
-const course = require("../models/course");
+
 
 //techer part
 
