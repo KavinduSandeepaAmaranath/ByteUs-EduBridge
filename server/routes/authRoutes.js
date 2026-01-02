@@ -12,4 +12,4 @@ router.post("/studentLogin", loginStudent);
 router.post("/teacherRegister", registerTeacher);
 router.post("/teacherLogin", loginTeacher);
 
-module.exports = router;    
+module.exports = router;     
