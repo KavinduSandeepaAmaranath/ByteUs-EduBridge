@@ -1,0 +1,13 @@
+const mongoose = require("mongoose");
+
+const teacherschema = new mongoose.Schema({
+    name:{type:String, required:true},
+    tcId:{type:String, required:true, unique:true},
+    email:{type:String, required:true, unique:true},
+    password:{type:String, required:true},
+
+},
+    {timestamps: true}
+);
+
+module.exports = mongoose.model.teacher || mongoose.model("teacher", teacherschema);
