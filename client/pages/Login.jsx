@@ -1,5 +1,6 @@
 import { X } from 'lucide-react'
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const Login = () => {
 
@@ -52,8 +53,16 @@ const Login = () => {
 
 
   return (
-    <div className='min-h-screen bg-lime-50 backdrop-blur-3xl flex items-center justify-center'>
-        <div className='min-w-md bg-lime-300/50 p-10 rounded-xl'>
+    <motion.div 
+    initial={{opacity:0, scale:0.8}}
+    animate={{opacity:1, scale: 1}}
+    transition={{
+        type:'spring',
+        damping:20,
+        stiffness:200
+    }}
+    className='min-h-screen bg-[#3B82F6]/10 backdrop-blur-3xl flex items-center justify-center'>
+        <div className='min-w-md bg-[#3B82F6]/15 p-10 rounded-xl'>
             <div className='flex items-center justify-center sm:text-2xl font-bold mb-10'>
                 <div>
                     <h1>Login form</h1>
@@ -84,7 +93,7 @@ const Login = () => {
                 </div>
             </form>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

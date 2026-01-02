@@ -1,5 +1,6 @@
 import { X } from 'lucide-react'
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const Register = () => {
 
@@ -57,8 +58,16 @@ const Register = () => {
     }
 
   return (
-    <div className='min-h-screen bg-lime-50 flex items-center justify-center'>
-        <div className='min-w-md bg-lime-300/50 p-5 rounded-xl'>
+    <motion.div 
+    initial={{opacity:0, scale:0.8}}
+    animate={{opacity:1, scale: 1}}
+    transition={{
+        type:'spring',
+        damping:20,
+        stiffness:200
+    }}
+    className='min-h-screen bg-[#3B82F6]/10 flex items-center justify-center'>
+        <div className='min-w-md bg-[#3B82F6]/15 p-5 rounded-xl'>
             <div className='flex items-center justify-center sm:text-2xl font-bold mb-10'>
                 <div>
                     <h1>Register</h1>
@@ -111,7 +120,7 @@ const Register = () => {
                 </div>
             </form>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
