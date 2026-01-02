@@ -1,10 +1,11 @@
 const student = require("../models/student");
 const teacher = require("../models/teacher");
 const bcrypt = require("bcryptjs");
+const genarateToken = require("../utils/genarateToken");
 
 exports.registerStudent = async (req, res) => {
     try {
-        const { name, studentId, email, password } = req.body;
+        const { name, studentId, email, password, confirmPassword } = req.body;
 
         if(password !== confirmPassword) {
             return res.status(400).json({message:"Passwords does not match"});
