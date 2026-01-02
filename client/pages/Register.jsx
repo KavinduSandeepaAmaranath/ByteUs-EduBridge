@@ -47,10 +47,10 @@ const Register = () => {
                 setStudentId('')
                 setTeacherId('')
             }else{
-                setError('Registration faild')
+                setError('Registration failed')
             }
         }catch(error){
-            setError('Server didn;t response')
+            setError('Server did not response')
         }finally{
             setLoading(false)
         }
@@ -59,7 +59,7 @@ const Register = () => {
   return (
     <div className='min-h-screen bg-lime-50 flex items-center justify-center'>
         <div className='min-w-md bg-lime-300/50 p-5 rounded-xl'>
-            <div className='flex items-center justify-center sm:text-2xl font-bold'>
+            <div className='flex items-center justify-center sm:text-2xl font-bold mb-10'>
                 <div>
                     <h1>Register</h1>
                 </div>
@@ -80,7 +80,7 @@ const Register = () => {
                 </div>
             )}
 
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name" className='block text-xl font-bold'>Name</label>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} id='name' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your name here' />
