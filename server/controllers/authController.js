@@ -1,7 +1,7 @@
 const student = require("../models/student");
 const teacher = require("../models/teacher");
 const bcrypt = require("bcryptjs");
-const genarateToken = require("../utils/genarateToken");
+const generateToken = require("../utils/genarateToken");
 
 exports.registerStudent = async (req, res) => {
     try {
