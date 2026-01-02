@@ -116,7 +116,7 @@ const Register = () => {
                     <input type="password" value={passsword} onChange={(e) => setPassword(e.target.value)} id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
                 </div>
                 <div>
-                    <button type='submit' className='bg-amber-300 w-full font-bold py-2 mt-10 rounded-3xl'>{loading ? 'Submitting' : 'Submit'}</button>
+                    <button type='submit' className='bg-[#3B82F6] text-white w-full font-bold py-2 mt-10 rounded-3xl'>{loading ? 'Submitting' : 'Submit'}</button>
                 </div>
             </form>
         </div>

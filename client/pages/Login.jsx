@@ -1,6 +1,7 @@
-import { X } from 'lucide-react'
+import {  X } from 'lucide-react'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -71,27 +72,27 @@ const Login = () => {
             <div className='mt-5 mb-5'>
                 <h1 className='text-lg font-semibold text-gray-600'> {isTeacher ? 'If you you are a student' : "If you are a teacher"} <span className='font-bold text-black hover:border-b-2' onClick={toggleTeacher}>{isTeacher ? "Click here" : "Click here"}</span></h1>
             </div>
-            <form action="" onSubmit={handleSubmit}>
+            <div>
                 {!isTeacher && (
                     <div>
                         <label htmlFor="studentId" className='block text-xl font-bold'>Student ID</label>
-                        <input type="text" value={studentId} onChange={(e) => setStudentId(e.target.value)} id='studentId' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
+                        <input type="text" id='studentId' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
                     </div>
                 )}
                 {isTeacher && (
                     <div>
                         <label htmlFor="teacherId" className='block text-xl font-bold'>Teacher ID</label>
-                        <input type="text" value={teacherId} onChange={(e) => setTeacherId(e.target.value)} id='teacherId' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
+                        <input type="text" id='teacherId' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your student ID here' />
                     </div>
                 )}
                 <div>
                     <label htmlFor="passsword" className='block text-xl font-bold mt-5'>Password</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
+                    <input type="password"  id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
                 </div>
                 <div>
-                    <button type='submit' className='bg-amber-300 w-full py-2 mt-10 rounded-3xl text-lg font-bold'>Submit</button>
+                    <button type='submit' className='bg-[#3B82F6] text-white w-full py-2 mt-10 rounded-3xl text-lg font-bold'>Submit</button>
                 </div>
-            </form>
+            </div>
         </div>
     </motion.div>
   )

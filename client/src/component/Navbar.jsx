@@ -19,6 +19,7 @@ const Navbar = () => {
                 <Link><li>Cources</li></Link>
                 <Link><li>Resources</li></Link>
                 <Link><li>About</li></Link>
+                <Link><li>Dashboard</li></Link>
             </ul>
             <div className='items-center space-x-10 hidden md:flex'>
                 <div className='bg-[#3B82F6] px-5 py-2 rounded-xl font-bold text-white w-32 text-center'>

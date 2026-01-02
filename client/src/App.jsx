@@ -4,6 +4,9 @@ import { Routes, Route } from 'react-router-dom'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
+import Dashboard from '../pages/student/Dashboard'
+import Cources from '../pages/student/Cources'
+import Progress from '../pages/student/Progress'
 
 const App = () => {
 
@@ -14,6 +17,9 @@ const App = () => {
         <Route path='/' element={<Home />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/cources' element={<Cources />}/>
+        <Route path='/progress' element={<Progress />}/>
       </Routes>
     </div>
   )
