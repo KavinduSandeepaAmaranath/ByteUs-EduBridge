@@ -43,21 +43,32 @@ const getAllCourses = async(req,res)=>{
 
 //enroll student
 const enrollCourse = async(req,res)=>{
-        try{
-            const course=await course.findById(req.params.courseId);
+        try {
+            const foundCourse = await course.findById(req.params.courseId);
 
-            if(!course)
-                return res.status(404).json({message:"course not found"});
-            if(course.enrolledStudents.includes(req.user.id)){
-                return res.status(400).json({message:"Already enrolled"});
+            if (!foundCourse) {
+                return res.status(404).json({ message: "Course not found" });
             }
-            course.enrolledStudents.push(req.user.id);
-            await course.save();
 
-            res.json({message: "Enrolled successfully"});
-        }catch(error){
-            res.status(500).json({message:"Enrollment failed"});
-        }
+            // Convert ObjectIds to strings before comparison
+            const alreadyEnrolled = foundCourse.enrolledStudents
+                .map(id => id.toString())
+                .includes(req.user.id);
+
+            if (alreadyEnrolled) {
+                return res.status(400).json({ message: "Already enrolled" });
+            }
+
+            foundCourse.enrolledStudents.push(req.user.id);
+            await foundCourse.save();
+
+            res.json({ message: "Enrolled successfully" });
+
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Enrollment failed" });
+}
+
 };
 
 module.exports={
