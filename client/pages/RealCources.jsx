@@ -28,7 +28,7 @@ const RealCources = () => {
                 <div className='flex items-center justify-center'>
                     <h1 className='sm:text-6xl md:text-7xl font-bold text-5xl'>Our <span className='text-[#3B82F6]'>Cources</span></h1>
                 </div>
-                <div className='text-center mt-5 sm:mt-10 justify-center sm:flex sm:gap-20'>
+                <div className='grid grid-cols-1 md:grid-cols-3 m-20 lg:grid-cols-4 text-center mt-5 sm:mt-10 justify-center sm:gap-20'>
                     <div className='bg-[#3B82F6]/15 w-70 h-full rounded-2xl hover:scale-105 hover:shadow-xl shadow-blue-100 transition-all duration-300'>
                         <div className='justify-center flex'>
                             <div className=' flex justify-center items-center mt-10 w-full'>

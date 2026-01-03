@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -21,10 +22,10 @@ const Home = () => {
                     <h1 className='md:text-7xl sm:text-5xl font-bold text-5xl'>Simple</h1>
                     <p className='sm:text-lg md:text-xl text-base sm:mt-10 mt-5 font-semibold'>A simple web-basedplatform that helps <br /> teachers share lessons <br /> andtrack studentlearning progress easily.</p>
                     <div className='flex items-center justify-center text-white'>
-                        <div className='flex justify-center sm:mt-10 mt-5 bg-[#3B82F6] sm:w-50  rounded-xl sm:px-5 sm:py-3 px-2 py-2 font-bold group hover:scale-105 transition-all duration-300'> 
+                        <Link to={'/login'}><div className='flex justify-center sm:mt-10 mt-5 bg-[#3B82F6] sm:w-50  rounded-xl sm:px-5 sm:py-3 px-2 py-2 font-bold group hover:scale-105 transition-all duration-300'> 
                             <button>GET STARTED</button>
                             <ArrowRight />
-                        </div>
+                        </div></Link>
                     </div>
                 </div>
                 <div className='order-2 sm:order-1'>

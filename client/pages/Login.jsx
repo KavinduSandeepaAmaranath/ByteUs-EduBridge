@@ -13,6 +13,7 @@ const Login = () => {
     const[success, setSuccess] = useState('')
     const[error, setError] = useState('')
     const[loading, setLoading] = useState('')
+    const[confirmPassword, setConfirmPassword] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -44,6 +45,7 @@ const Login = () => {
                 setPassword('')
                 setStudentId('')
                 setTeacherId('')
+                setConfirmPassword('')
             }else{
                 setError('Login failed')
             }
