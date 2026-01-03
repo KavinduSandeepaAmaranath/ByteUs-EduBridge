@@ -69,7 +69,7 @@ const Register = () => {
         damping:20,
         stiffness:200
     }}
-    className='min-h-screen bg-[#3B82F6]/10 flex items-center justify-center'>
+    className='h-[1000px] bg-[#3B82F6]/10 flex items-center justify-center'>
         <div className='min-w-md bg-[#3B82F6]/15 p-5 rounded-xl'>
             <div className='flex items-center justify-center sm:text-2xl font-bold mb-10'>
                 <div>
