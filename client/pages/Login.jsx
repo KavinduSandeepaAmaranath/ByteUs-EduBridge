@@ -13,6 +13,7 @@ const Login = () => {
     const[success, setSuccess] = useState('')
     const[error, setError] = useState('')
     const[loading, setLoading] = useState('')
+    const[confirmPassword, setConfirmPassword] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -44,6 +45,7 @@ const Login = () => {
                 setPassword('')
                 setStudentId('')
                 setTeacherId('')
+                setConfirmPassword('')
             }else{
                 setError('Login failed')
             }
@@ -90,6 +92,10 @@ const Login = () => {
                 <div>
                     <label htmlFor="passsword" className='block text-xl font-bold mt-5'>Password</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
+                </div>
+                <div>
+                    <label htmlFor="confirmPasssword" className='block text-xl font-bold mt-5'>Confirm password</label>
+                    <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
                 </div>
                 <div>
                     <button type='submit' className='bg-[#3B82F6] text-white w-full py-2 mt-10 rounded-3xl text-lg font-bold'>Submit</button>

@@ -11,10 +11,12 @@ const Register = () => {
     const[studentId, setStudentId] = useState('')
     const[teacherId, setTeacherId] = useState('')
     const[email, setEmail] = useState('')
-    const[passsword, setPassword] = useState('')
+    const[password, setPassword] = useState('')
+    const[confirmPasssword, setConfirmPassword] = useState('')
     const[error, setError] = useState('')
     const[success, setSuccess] = useState('')
     const[loading, setLoading] = useState(false)
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -25,7 +27,7 @@ const Register = () => {
         const userData = {
             name: name,
             email: email,
-            password: passsword,
+            password: password,
             role: isTeacher ? 'teacher' : 'student',
             ...(isTeacher ? {teacher: teacherId} : {student: studentId})
         }
@@ -45,6 +47,7 @@ const Register = () => {
                 setName('')
                 setEmail('')
                 setPassword('')
+                setConfirmPassword('')
                 setStudentId('')
                 setTeacherId('')
             }else{
@@ -114,6 +117,10 @@ const Register = () => {
                 <div>
                     <label htmlFor="password" className='block text-xl font-bold mt-5'>Password</label>
                     <input type="password" value={passsword} onChange={(e) => setPassword(e.target.value)} id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
+                </div>
+                <div>
+                    <label htmlFor="confirmPasssword" className='block text-xl font-bold mt-5'>Confirm password</label>
+                    <input type="password" value={confirmPasssword} onChange={(e) => setConfirmPassword(e.target.value)} id='password' className='w-full bg-gray-50 py-3 px-5 rounded-2xl mt-3 font-semibold text-gray-600' placeholder='Enter your password here' />
                 </div>
                 <div>
                     <button type='submit' className='bg-[#3B82F6] text-white w-full font-bold py-2 mt-10 rounded-3xl'>{loading ? 'Submitting' : 'Submit'}</button>
