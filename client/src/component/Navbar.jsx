@@ -8,6 +8,7 @@ const Navbar = () => {
 
     const[mobileMenu, setMobileMenu] = useState(false)
     const toggleMenu = () => setMobileMenu(!mobileMenu)
+    
 
   return (
     <header className='fixed top-0 z-50 w-full'>
@@ -17,7 +18,6 @@ const Navbar = () => {
             </div>
             <ul className='space-x-5 text-lg font-bold md:flex hidden'>
                 <Link to={'/realcources'}><li>Cources</li></Link>
-                <Link><li>Resources</li></Link>
                 <Link to={'/about'}><li>About</li></Link>
                 <Link><li>Dashboard</li></Link>
             </ul>
@@ -42,13 +42,12 @@ const Navbar = () => {
                 damping:20,
                 stiffness:200
             }}
-            className='flex flex-col items-center justify-center mt-5 space-y-5'>
-                <div className='text-xl font-bold'>
-                    <button>Log in</button>
-                </div>
-                <div className='text-xl font-bold'>
-                    <button>Register</button>
-                </div>
+            className='flex flex-col items-center justify-center mt-5 space-y-5 sm:hidde'>
+                <Link to={'/login'} className='text-xl font-bold'>Login</Link>
+                <Link to={'/register'} className='text-xl font-bold'>Register</Link>
+                <Link to={'/realcources'} className='text-xl font-bold'>Cources</Link>
+                <Link to={'/dashboard'} className='text-xl font-bold'>Dashboard</Link>
+                <Link to={'/about'} className='text-xl font-bold'>About</Link>
             </motion.div>
         )}
     </header>
