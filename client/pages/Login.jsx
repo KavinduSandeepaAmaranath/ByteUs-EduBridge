@@ -25,15 +25,18 @@ const Login = () => {
             role: isTeacher ? 'teacher' : 'student',
             ...(isTeacher ? {teacher: teacherId} : {student: studentId})
         }
+        const url = isTeacher 
+       ? 'http://localhost:5000/api/auth/teacherLogin'
+        : 'http://localhost:5000/api/auth/studentLogin'
+
 
         try{
-            const response = await fetch('',{
-                method: 'POST',
-                header: {
-                    header: ''
-                },
-                body: JSON.stringify(userData)
-            })
+           const response = await fetch(url, {
+          method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(userData)
+})
+
             const data  = await response.json()
 
             if(response.ok){
@@ -98,4 +101,3 @@ const Login = () => {
 }
 
 export default Login
-

@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom'
 
 const Progress = () => {
   return (
-    <div className='mt-20 w-full'>
+    <motion.div 
+    initial={{opacity:0, scale:0.8}}
+    animate={{opacity:1, scale: 1}}
+    transition={{
+        type:'spring',
+        damping:20,
+        stiffness:200
+    }}
+    className='mt-20 w-full'>
         <div className='bg-[#3B82F6]/15 w-100 h-[750px]'>
             <div className='flex items-center justify-center gap-5'>
                 <div className='bg-white rounded-full mt-5'>
@@ -34,7 +42,7 @@ const Progress = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -12,6 +12,8 @@ import Teachercources from '../pages/teacher/Teachercources'
 import Teacherprogress from '../pages/teacher/Teacherprogress'
 import Addcources from '../pages/teacher/Addcources'
 import Addlesson from '../pages/teacher/Addlesson'
+import RealCources from '../pages/RealCources'
+import About from '../pages/About'
 
 const App = () => {
 
@@ -30,6 +32,8 @@ const App = () => {
         <Route path='/teacherprogress' element={<Teacherprogress />}/>
         <Route path='/addcources' element={<Addcources />}/>
         <Route path='/addlesson' element={<Addlesson />}/>
+        <Route path='/realcources' element={<RealCources />}/>
+        <Route path='/about' element={<About />}/>
       </Routes>
     </div>
   )

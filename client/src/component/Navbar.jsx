@@ -16,9 +16,9 @@ const Navbar = () => {
                 <Link to={'/'}><img src="Logo - Edubridge (1).png" className='sm:h-11 sm:w-15 h-11' alt="" /></Link>
             </div>
             <ul className='space-x-5 text-lg font-bold md:flex hidden'>
-                <Link><li>Cources</li></Link>
+                <Link to={'/realcources'}><li>Cources</li></Link>
                 <Link><li>Resources</li></Link>
-                <Link><li>About</li></Link>
+                <Link to={'/about'}><li>About</li></Link>
                 <Link><li>Dashboard</li></Link>
             </ul>
             <div className='items-center space-x-10 hidden md:flex'>

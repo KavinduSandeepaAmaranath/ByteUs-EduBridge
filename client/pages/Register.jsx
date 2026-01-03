@@ -25,19 +25,19 @@ const Register = () => {
         const userData = {
             name: name,
             email: email,
-            passsword: passsword,
+            password: passsword,
             role: isTeacher ? 'teacher' : 'student',
             ...(isTeacher ? {teacher: teacherId} : {student: studentId})
         }
-
+          const url = isTeacher 
+          ? 'http://localhost:5000/api/auth/teacherRegister'
+          : 'http://localhost:5000/api/auth/studentRegister'
         try{
-            const response = await fetch('',{
-                method: 'POST',
-                header: {
-                    header: ''
-                },
-                body: JSON.stringify(userData)
-            })
+              const response = await fetch(url, {
+          method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(userData)
+        })
             const data  = await response.json()
 
             if(response.ok){
