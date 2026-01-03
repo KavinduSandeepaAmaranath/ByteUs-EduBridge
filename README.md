@@ -92,3 +92,36 @@ This project aligns with the following UN Sustainable Development Goals:
 - studentId
 - lessonId
 - status (completed / pending)
+  
+---
+
+## Deployment
+
+- Backend deployed using Azure App Service
+
+- Frontend deployed using Azure Static Web Apps
+
+- Database hosted on MongoDB Atlas
+
+- Screenshots and deployment proof are provided as required.
+
+  ---
+
+## AI Usage Declaration
+
+### AI tools were used only for:
+
+- Understanding logic and concepts
+
+- UI and database design suggestions
+
+- Debugging small code issues
+
+#### AI was not used to generate the full application or large code blocks.
+#### All code was written manually during the hackathon.
+
+---
+
+## Conclusion
+
+EduBridge demonstrates how a simple MERN-based web application can support quality education and help reduce inequality in resource-limited educational environments.
